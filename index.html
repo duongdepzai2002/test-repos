@@ -144,6 +144,38 @@
             margin: 26px auto;
             background-color: #ffce00;
         }
+
+        /* form modal */
+        .modal {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .form-1 {
+            background-color: #fff;
+            width: 50%;
+            height: 60%;
+            opacity: 1;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 477px;
+        }
+
+        .modal__icon {
+            font-size: 2.6rem;
+            color: red;
+            float: right;
+            margin: 10px 16px;
+            cursor: pointer;    
+        }
+
+        .modal.delete {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -166,5 +198,25 @@
             <button class="form__create-acount btn">Create New Account</button>
         </div>
     </div>
+
+    <div class="modal">
+        <i class="modal__icon fas fa-times"></i>
+        <div class="form-1">
+            Đmm thằng súc vật
+        </div>
+    </div>
 </body>
 </html>
+
+<script>
+    const $ = document.querySelector.bind(document)
+    const $$ = document.querySelectorAll.bind(document)
+
+    const btn = $('.modal__icon')
+    const modal = $('.modal')
+
+    btn.onclick = function () {
+        modal.classList.add('delete')
+    }
+
+</script>
